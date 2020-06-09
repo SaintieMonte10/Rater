@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'raterapp.apps.RaterappConfig',
     'bootstrap4',
-    'tinymce',
 ]
 
 MIDDLEWARE = [
