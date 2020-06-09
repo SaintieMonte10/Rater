@@ -1,7 +1,8 @@
-from django.urls import path, include
+from django.conf.urls import url
 from . import views
 from django.conf import settings
 
-urlpatterns=[ 
-    path('',views.home,name = 'home'),
+urlpatterns=[
+    url('^$',views.home,name='home'),
 ]
+
