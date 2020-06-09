@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'raterapp.apps.RaterappConfig',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
