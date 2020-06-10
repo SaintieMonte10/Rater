@@ -12,7 +12,8 @@ from django.core.exceptions import ObjectDoesNotExist
 
 def home(request):
     all_projects = Project.fetch_all_images()
-    return render(request,"Moringa_Project_Awards/index.html",{"all_images":all_projects})
+    return render(request,"main/index.html",{"all_images":all_projects})
+    
 
 @login_required(login_url='/accounts/login/')
 def new_project(request):

@@ -1,7 +1,8 @@
 from django.conf.urls import url
 from . import views
 from django.conf import settings
-from django.templatetags.static import static
+from django.conf.urls.static import static
+
 
 urlpatterns=[
     url('^$',views.home,name='home'),
@@ -11,6 +12,8 @@ urlpatterns=[
     url(r'^edit/profile/$',views.profile_edit,name = 'edit_profile'),
     url(r'^search/',views.search_project, name='search_results'),
     url(r'^project/review/(\d+)',views.project_review,name='project_review'),
+    url(r'^api/profile/$', views.ProfileList.as_view()),
+    url(r'^api/projects/$', views.ProjectList.as_view()),
 ]
 
 if settings.DEBUG:
