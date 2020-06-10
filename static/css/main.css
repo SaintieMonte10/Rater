@@ -2,3 +2,46 @@ h1{
     text-align: center;
     color: aqua;
 }
+h4{
+    font-family: 'Pacifico', cursive;
+}
+
+body{
+    overflow-x: hidden;
+}
+.home{
+    background-image: url(https://images.pexels.com/photos/460736/pexels-photo-460736.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-size: cover;
+}
+
+
+.heading{
+    font-family: 'Piedra', cursive;
+    font-size: 35px;
+    margin:15px;
+}
+
+.btn{
+    border-radius: 30px;
+    float: right;
+}
+
+.logo img{
+    object-fit: cover;
+    width: 300px;
+    height: 10px;
+}
+.card{
+    max-height: 900px;    
+}
+
+
+
+
+
+
+
+
+
+
+
