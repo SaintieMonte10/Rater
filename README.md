@@ -3,7 +3,7 @@
 ## Author
 **Clare Richards**
 
-## This is a Django Web Application where you can post and/or view different projects and rate them according to design,usability and content.
+- This is a Django Web Application where you can post and/or view different projects and rate them according to design,usability and content.
 
 
 ## Description
