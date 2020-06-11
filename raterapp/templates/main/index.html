@@ -2,10 +2,19 @@
 {% block content %}
 <div class="home">
     <h1 class="text-center heading">Welcome to Project rater</h1>
+    <br>
+    <br>
+    <br>
+    <p class="design">Usability Deign Creativity content</p>
+    <br>
+    <br>
+    <br>
+    <p class="site"><button type="button" class="btn btn-info btn-rounded">visit site</button></p>
+
+
 </div>
 
 <div class="container-fluid">
-   
 
     <div class="row">
         {% for image in all_images%}
@@ -20,12 +29,10 @@
                 </div>
                 <!--Card content-->
                 <div class="card-body">
-
                     <!--Title-->
                     <h4 class="card-title">{{image.title}}</h4>
                     <!--Text-->
                     <p class="card-text">{{image.details}}</p>
-                    <p>By {{user.user.name}} name</p>
                     <p><a href="{{image.link}}">Live Project Link</a></p>
 
                     <a href="{% url 'project_review' image.pk %}" class="btn btn-danger btn-md">Review Project</a>
@@ -47,7 +54,10 @@
         <!--Modal: modalYT-->
 
 
-
+        {% empty %}
+        <div class="row">
+            <h1 class="text-center"> No Images Yet</h1>
+        </div>
         {% endfor %}
     </div>
     <!-- Card deck -->

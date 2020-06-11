@@ -9,6 +9,7 @@ from django.http import Http404
 # Create your views here.
 def home(request):
     all_projects = Project.fetch_all_images()
+    
     return render(request,"main/index.html",{"all_images":all_projects})
 
 @login_required(login_url='/accounts/login/')
