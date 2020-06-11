@@ -79,7 +79,7 @@ def profile(request):
     except ObjectDoesNotExist:
         return redirect('new_profile')
 
-    return render(request,'profile/profile.html',{'profile':prof,'project':projects})
+    return render(request,'profile/profile.html',{'profile':prof,'projects':projects})
 
 
 
