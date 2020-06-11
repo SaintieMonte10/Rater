@@ -1,16 +1,31 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 from .models import Project,Profile
 from .forms import ProjectForm,ProfileForm,VoteForm
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .serializer import ProfileSerializer,ProjectSerializer
 
 # Create your views here.
 def home(request):
     all_projects = Project.fetch_all_images()
     
     return render(request,"main/index.html",{"all_images":all_projects})
+
+def register(request):
+    form = UserCreationForm()
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect ("login")
+    return render(request,"accounts/register.html",{"form":form})
+
+
 
 @login_required(login_url='/accounts/login/')
 def new_project(request):
@@ -109,3 +124,15 @@ def project_review(request,project_id):
     except Exception as  e:
         raise Http404()
     return render(request,'main/project_review.html',{"vote_form":vote_form,"single_project":single_project,"average_score":average_score})
+
+class ProfileList(APIView):
+    def get(self,request,format=None):
+        complete_profile = Profile.objects.all()
+        serializers = ProfileSerializer(complete_profile, many=True)
+        return Response(serializers.data)
+
+class ProjectList(APIView):
+    def get(self,request,format=None):
+        projects = Project.objects.all()
+        serializers = ProjectSerializer(projects, many=True)
+        return Response(serializers.data)

@@ -5,6 +5,7 @@
     <br>
     <br>
     <br>
+    <h3 class="monte">The projects are rated according to:</h3>
     <p class="design">Usability Deign Creativity content</p>
     <br>
     <br>
@@ -15,7 +16,6 @@
 </div>
 
 <div class="container-fluid">
-
     <div class="row">
         {% for image in all_images%}
 
@@ -29,12 +29,13 @@
                 </div>
                 <!--Card content-->
                 <div class="card-body">
+
                     <!--Title-->
                     <h4 class="card-title">{{image.title}}</h4>
                     <!--Text-->
                     <p class="card-text">{{image.details}}</p>
-                    <p><a href="{{image.link}}">Live Project Link</a></p>
-
+                    <p><a href="{{image.link}}">Live Project Link</a></p>                    
+                    
                     <a href="{% url 'project_review' image.pk %}" class="btn btn-danger btn-md">Review Project</a>
 
                 </div>
@@ -43,11 +44,11 @@
         <!--Modal: modalYT-->
         <div class="modal fade" id="{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
             aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <img class="embed-responsive-item" src="{{image.image.url}}" alt="Image Loading"
-                        style="margin:10px;" allowfullscreen>
-                </div>
+            <div class="modal-dialog modal-lg" role="document">                               
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <img class="embed-responsive-item" src="{{image.image.url}}" alt="Image Loading"
+                                style="margin:10px;" allowfullscreen>
+                        </div>                              
 
             </div>
         </div>
@@ -63,6 +64,6 @@
     <!-- Card deck -->
     <div class="row">
     </div>
-
+    
 </div>
 {% endblock %}

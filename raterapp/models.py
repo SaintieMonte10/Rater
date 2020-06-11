@@ -28,7 +28,7 @@ class Project(models.Model):
 
     @classmethod
     def fetch_all_images(cls):
-        all_images = Project.objects.all()
+        all_images = cls.objects.all()
         return all_images
 
     @classmethod
