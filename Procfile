@@ -1,1 +1,1 @@
-web: gunicorn raterapp.wsgi
+web: gunicorn raterproject.wsgi
