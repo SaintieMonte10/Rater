@@ -57,7 +57,7 @@ Give an example
 
 ## Clone the Repo and rename it to suit your needs.
 ```bash
-git clone [https://github.com/SaintieMonte10/Rater.git]
+git clone https://github.com/SaintieMonte10/Rater.git
 ```
 ## Initialize git and add the remote repository
 ```bash
@@ -97,8 +97,8 @@ Install dependancies that will create an environment for the app to run
 ## Make and run migrations
 ```bash
 python3.6 manage.py check
-python manage.py makemigrations awards
-python3.6 manage.py sqlmigrate awards 0001
+python manage.py makemigrations
+python3.6 manage.py sqlmigrate 
 python3.6 manage.py migrate
 ```
 
