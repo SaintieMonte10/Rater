@@ -1,17 +1,8 @@
 {% extends 'main/base.html' %}
 {% block content %}
 <div class="container-fluid">
-
-  <div class="row heading" style="margin-left:20px;">
-    {% if projects%}
-    <h2>Found {{ project |length }} projects of searched term {{message}}</h2>
-    {% else %}
-    <h2> Found no projects for the search term {{message}}</h2>
-    {% endif %}
-
-  </div>
   <div class="row">
-    {% for project in projects %}
+    {% for projects in projects %}
 
     <div class="col-md-4 main-page d-flex" style=" margin-top: 10px;">
       <div class="card card-cascade wider flex-fill ">
@@ -41,5 +32,14 @@
     </div>
     {% endfor %}
   </div>
+  <div class="row heading" style="margin-left:20px;">
+    {% if projects%}
+    <h2>Found {{ project |length }} projects of searched term {{message}}</h2>
+    {% else %}
+    <h2> Found no projects for the search term {{message}}</h2>
+    {% endif %}
+
+  </div>
+  
 </div>
 {% endblock %}
