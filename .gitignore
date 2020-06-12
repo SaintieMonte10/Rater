@@ -2,3 +2,6 @@
 virtual/
 *.pyc
 __pycache__/
+.vscode
+requirements.txt
+
